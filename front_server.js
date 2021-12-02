@@ -28,10 +28,22 @@ app.get('/edit', function(req, res) {
 });
 
 app.post('/process_form', function(req, res){ //change this for the examples to reflect the hero name being passed into the api
-    // create a variable to hold the hero name parsed from the request body
-    var hero_name = req.body.hero_name /*checks for the variable in the body 
-    kind of like how id was passed and checked for in the search bar for previous assigments but looks at the body*/
+   // create a variable to hold the hero name parsed from the request body
+   // create a variable to hold the username parsed from the request body
+   var username = req.body.username
+   // create a variable to hold ....
+   var password = req.body.password
 
+   let check = 0;
+
+   if (req.body.rememberme == 'on')
+       check = 1;
+
+   console.log("email is: " + username);
+   console.log("password is: " + password);
+   console.log("checkedbox checked: " + check);
+
+   res.render('pages/thanks.ejs', {body: req.body})
    
     console.log("Searching Bat-Computer files for: " + hero_name); //passes the entered name to the console
     axios.get('https://www.superheroapi.com/api.php/1975166625996438/search/' + hero_name) //concatenate the desired hero name from the body to end of the api to get information about them
