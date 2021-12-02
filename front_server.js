@@ -45,6 +45,7 @@ app.put('/edit', function(req, res) {
 });
 
 
+
 //More palcehodler ideas
 //edit_resturant
 //pass in the user info that we want to update
@@ -71,6 +72,7 @@ app.put('/edit', function(req, res) {
     // this will render our new example spage 
     res.render("pages/edit.ejs", {body: req.body});
 });
+
 
 
 
@@ -111,6 +113,8 @@ axios is since this is supposed to use stuff form the python file*/
 })
 
 
+
+
 /* the final path at the moemnt that shhould use the random selection and dispaly it
 right  now this is also just a placeholder */
 app.get('/choose', function(req, res) {
@@ -122,5 +126,9 @@ app.get('/choose', function(req, res) {
     res.render('pages/choose');
     });
 });
+
+
+
+
 app.listen(8080);
 console.log('8080 is the magic port');
