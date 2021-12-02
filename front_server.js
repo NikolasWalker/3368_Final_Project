@@ -14,13 +14,19 @@ app.set('view engine', 'ejs');
 
 // use res.render to load up an ejs view file
 
-// index page 
+
+
+/* the home page at the moemnt shoudl bring up a form to enter a name and password 
+but it shouldn't be to difficult to change the name stuff for our purposes.
+For now this is kind of a filler*/
 app.get('/', function(req, res) {
     var exampleVar = "Javascript";
     res.render("pages/account.ejs", {exampleVar: exampleVar});
 });
 
-app.get('/edit', function(req, res) {
+
+// named it app.put for the time being
+app.put('/edit', function(req, res) {
     // create a variable to hold the hero name parsed from the request body
    // create a variable to hold the username parsed from the request body
    var username = req.body.username
@@ -37,6 +43,8 @@ app.get('/edit', function(req, res) {
     // this will render our new example spage 
     res.render("pages/edit.ejs", {body: req.body});
 });
+
+
 
 app.post('/process_form', function(req, res){ //change this for the examples to reflect the hero name being passed into the api
    // create a variable to hold the hero name parsed from the request body
@@ -75,8 +83,16 @@ axios is since this is supposed to use stuff form the python file*/
 })
 
 
+/* the final path at the moemnt that shhould use the random selection and dispaly it
+right  now this is also just a placeholder */
 app.get('/choose', function(req, res) {
+    axios.get('http://127.0.0.1:5000/randomrestaurant' + hero_name) //concatenate the desired hero name from the body to end of the api to get information about them
+ .then((response)=>{
+ var hero_name = response.data; //saves the resposne to the variable
+ var tagline = "Displaying known identies for selected superhero in Bat-Computer daatabase:";
+ console.log(hero_name);
     res.render('pages/choose');
+    });
 });
 app.listen(8080);
 console.log('8080 is the magic port');
