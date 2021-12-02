@@ -33,6 +33,11 @@ app.post('/process_form', function(req, res){ //change this for the examples to 
    var username = req.body.username
    // create a variable to hold ....
    var password = req.body.password
+ /*I think it is meant to be setup like this but I am not entirely sure if that macthes what we have 
+ in dinenrparty so this will probably need to be changed to firstname and lastname I guess.
+ 
+ I am thinking of making this the home page but I am keeping it as process_form so I can track how
+ this is supposed to work at the moemnt with the HTML pages*/
 
    let check = 0;
 
@@ -41,12 +46,12 @@ app.post('/process_form', function(req, res){ //change this for the examples to 
 
    console.log("email is: " + username);
    console.log("password is: " + password);
-   console.log("checkedbox checked: " + check);
+   console.log("checkedbox checked: " + check); 
 
    res.render('pages/thanks.ejs', {body: req.body})
-   
+
     console.log("Searching Bat-Computer files for: " + hero_name); //passes the entered name to the console
-    axios.get('https://www.superheroapi.com/api.php/1975166625996438/search/' + hero_name) //concatenate the desired hero name from the body to end of the api to get information about them
+    axios.get('http://127.0.0.1:5000/user' + hero_name) //concatenate the desired hero name from the body to end of the api to get information about them
     .then((response)=>{
 
         var hero_name = response.data; //saves the resposne to the variable
