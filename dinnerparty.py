@@ -53,7 +53,7 @@ def show_user():
 # gets the id for each set of names and saves them inot a list called results so they can be called and displayed together
 # this allows for ?id=1 and other versions to be entered so the data saved can be displayed using the right key
 
-
+# maybe rename it to user_edit so it is easier to tell them apart
 @app.route('/user', methods=['PUT']) # this method allows for the users information to be updated
 def update_user():
     request_data = request.get_json()
