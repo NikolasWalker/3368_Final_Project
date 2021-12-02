@@ -45,6 +45,34 @@ app.put('/edit', function(req, res) {
 });
 
 
+//More palcehodler ideas
+//edit_resturant
+//pass in the user info that we want to update
+app.put('/edit', function(req, res) {
+    axios.get('http://127.0.0.1:5000/update/restaurantlist' + hero_name) //concatenate the desired hero name from the body to end of the api to get information about them
+ .then((response)=>{
+ var hero_name = response.data; //saves the resposne to the variable
+ var tagline = "Displaying known identies for selected superhero in Bat-Computer daatabase:";
+ console.log(hero_name);
+    res.render('pages/choose');
+    });
+   // create a variable to hold the username parsed from the request body
+   var username = req.body.username
+   // create a variable to hold ....
+   var password = req.body.password
+ /*I think this is how we could start off the page to edit information
+ I think a variable to get the id might be required but since that is handeled in the python part 
+ it might not be needed here*/
+
+   console.log("email is: " + username);
+   console.log("password is: " + password);
+   console.log("checkedbox checked: " + check); 
+
+    // this will render our new example spage 
+    res.render("pages/edit.ejs", {body: req.body});
+});
+
+
 
 app.post('/process_form', function(req, res){ //change this for the examples to reflect the hero name being passed into the api
    // create a variable to hold the hero name parsed from the request body
