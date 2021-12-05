@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <main>
+        <h1 style="text-align:center"> Welcome to the Dinner Party! </h1>
+        <br>
+        <div>
+            <form action="/adduser_form" method="get">
+                <div class="form-group">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Add User" required autofocus>
+                </div>              
+            </form>
+
+            <form action="/edituser_form" method="get">
+                <div class="form-group">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Edit User" required autofocus>
+                </div>              
+            </form>
+
+            <form action="/viewuser_form" method="get">
+                <div class="form-group">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="View User" required autofocus>
+                </div>              
+            </form>
+
+
+            <form action="/addrestaurant_form" method="get">
+                <div class="form-group">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Add Restaurant" required autofocus>
+                </div>              
+            </form>
+
+
+            <form action="/editrestaurant_form" method="get">
+                <div class="form-group">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Edit Restaurants" required autofocus>
+                </div>              
+            </form>
+
+
+            <form action="/random_form" method="get">
+                <div class="form-group">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Random Selection" required autofocus>
+                </div>              
+            </form>
+
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>
