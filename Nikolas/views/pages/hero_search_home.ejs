@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<body class="container">
+
+    <main>
+        <h1> Welcome the dinner party selection</h1>
+        <div>
+            <form action="/process_form" method="post">
+                <div class="form-group">
+                    <h2>Enter a hero name to search for their file:</h2>
+                    <label for="heroInput" class="form-label">for example type booster gold or booster_gold</label>
+                    <input type="text"  id="hero_name" name="hero_name" class="form-control" placeholder="ironman" required
+                    autofocus>
+                   </div>
+
+                <input class="btn btn-lg btn-primary btn-block" type="submit">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>
